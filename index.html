@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <!-- 元々記述済みのjqueryスクリプト -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- この1行を追加 -->
+  <script src="./js/script.js"></script>
 </head>
 <body>
   <!-- グローバルナビゲーション（ヘッダー）START -->
@@ -24,6 +28,19 @@
         </ul>
       </div>
     </nav>
+    <!-- sp用メニューエリア START -->
+    <nav class="g-navi-sp">
+      <div class="sp-logo">
+        <p class="logo-title">cake shop</p>
+      </div>
+      <!-- ハンバーガーメニュー  -->
+      <div class="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <!-- sp用メニューエリア END -->
   </header>
   <!-- グローバルナビゲーション（ヘッダー）END -->
   <!-- メインビジュアルSTART -->
@@ -104,13 +121,31 @@
       </div>
       <!-- スタッフボックス -->
       <div class="thought-container">
-        <div class="staff-box box-design">
-          <!-- ２）スタッフボックス内の要素を指定 -->
+        <!-- 1枚目のスライド -->
+        <div class="staff-box box-design active">
           <img class="staff-image" src="./image/thought01.png" alt="シェフ田中啓介">
           <div class="staff-text">
             <h3 class="staff-title">お客様が口に運ぶ瞬間までをデザインする</h3>
             <p class="staff-about about-text">ケーキの上のいちごはお菓子の宝石とも称されます。見て感動、口に入れて感動してもらえるケーキを作りたいと思い厨房にいます。毎夜スタッフで作っては試食を重ね毎月必ず新商品をリリースしています。心を込めたケーキをぜひご賞味頂きたいです。</p>
             <p class="staff-name about-text">パティシエ 田中啓介</p>
+          </div>
+        </div>
+        <!-- 2枚目のスライド -->
+        <div class="staff-box">
+          <img class="staff-image" src="./image/thought01.png" alt="ホール安田裕美">
+          <div class="staff-text">
+            <h3 class="staff-title">笑顔を絶やさず</h3>
+            <p class="staff-about about-text">ケーキと合うお飲み物をオススメするのが私たちの仕事です。特に初めていらっしゃるお客様にはステキな時間を過ごして頂けるよう、笑顔で接客する事を心がけています。cake shopでのひと時が次の活力になれれば幸せです。</p>
+            <p class="staff-name about-text">ホール 安田裕美</p>
+          </div>
+        </div>
+        <!-- 3枚目のスライド -->
+        <div class="staff-box">
+          <img class="staff-image" src="./image/thought01.png" alt="バリスタ沖田杏奈">
+          <div class="staff-text">
+            <h3 class="staff-title">ケーキ×〇〇=∞</h3>
+            <p class="staff-about about-text">ケーキに合うお飲み物をプロデュースしています。ケーキひとつ取っても、鼻から抜ける風味はそれぞれ特徴があります。ステキな時間を最適なお飲み物とケーキを食べながら過ごしませんか？</p>
+            <p class="staff-name about-text">バリスタ 沖田杏奈</p>
           </div>
         </div>
         <!-- 戻る・進むボタン -->
@@ -131,32 +166,76 @@
       <div class="life-wrapper">
         <!-- 1-teatime -->
         <div class="life-type">
-          <a href="#" class="modalopen">
+          <a href="#" class="modalopen" data-target="modal01">
             <img class="life-img" src="./image/cakelife01.png" alt="teatime">
             <p class="life-name">tea time</p>
           </a>
         </div>
+        <!-- 1つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal01">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">Tea time</p>
+              <img src="./image/cakelife01.png" alt="teatime" class="image-modal">
+              <p class="inner-text">ケーキとコーヒーのマリアージュ</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
+        </div>
         <!-- ライフボックス2つ目〜4つ目の要素を定義 -->
         <!-- 2-party -->
         <div class="life-type">
-          <a href="#" class="modalopen">
+          <a href="#" class="modalopen" data-target="modal02">
             <img class="life-img" src="./image/cakelife02.png" alt="party">
             <p class="life-name">party</p>
           </a>
         </div>
+        <!-- 2つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal02">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">party</p>
+              <img src="./image/cakelife02.png" alt="party" class="image-modal">
+              <p class="inner-text">仲間とお酒を囲んだ後の至福のスイーツ</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
+        </div>
         <!-- 3-gifts -->
         <div class="life-type">
-          <a href="#" class="modalopen">
+          <a href="#" class="modalopen" data-target="modal03">
             <img class="life-img" src="./image/cakelife03.png" alt="gifts">
             <p class="life-name">gifts</p>
           </a>
         </div>
+        <!-- 3つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal03">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">gifts</p>
+              <img src="./image/cakelife03.png" alt="gifts" class="image-modal">
+              <p class="inner-text">愛情いっぱいのケーキを大切な人に</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
+        </div>
         <!-- 4-seasonal -->
         <div class="life-type">
-          <a href="#" class="modalopen">
+          <a href="#" class="modalopen" data-target="modal04">
             <img class="life-img" src="./image/cakelife04.png" alt="season">
             <p class="life-name">season</p>
           </a>
+        </div>
+        <!-- 4つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal04">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">season</p>
+              <img src="./image/cakelife04.png" alt="season" class="image-modal">
+              <p class="inner-text">時代の移り変わりにケーキで彩りを</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -172,17 +251,17 @@
       <div class="lineup-menu">
         <!-- ラインナップメニュー×5つ -->
         <ul class="filter">
-          <li class="lineup-tab active"><a class="ranking" href="#">ranking</a></li>
-          <li class="lineup-tab"><a class="tea" href="#">tea time</a></li>
-          <li class="lineup-tab"><a class="party" href="#">party</a></li>
-          <li class="lineup-tab"><a class="gifts" href="#">gifts</a></li>
-          <li class="lineup-tab"><a class="season" href="#">season</a></li>
+          <li class="lineup-tab active" data-filter="ranking"><a class="ranking" data-filter="ranking" href="#">ranking</a></li>
+          <li class="lineup-tab" data-filter="tea"><a class="tea" data-filter="tea" href="#">tea time</a></li>
+          <li class="lineup-tab" data-filter="party"><a class="party" data-filter="party" href="#">party</a></li>
+          <li class="lineup-tab" data-filter="gifts"><a class="gifts" data-filter="gifts" href="#">gifts</a></li>
+          <li class="lineup-tab" data-filter="season"><a class="season" data-filter="season" href="#">season</a></li>
         </ul>
       </div>
       <div class="lineup-wrapper">
         <!-- ラインナップボックス×3つ -->
         <!-- 商品1つ目 -->
-        <div class="lineup-product">
+        <div class="lineup-product tea" data-category="tea">
           <div class="lineup-image">
             <img src="./image/cake01.png" alt="タルト">
           </div>
@@ -195,7 +274,7 @@
           </div>
         </div>
         <!-- 商品2つ目 -->
-        <div class="lineup-product">
+        <div class="lineup-product party" data-category="party">
           <div class="lineup-image">
             <img src="./image/cake02.png" alt="ショートケーキ">
           </div>
@@ -208,7 +287,7 @@
           </div>
         </div>
         <!-- 商品3つ目 -->
-        <div class="lineup-product">
+        <div class="lineup-product gift" data-category="gifts">
           <div class="lineup-image">
             <img src="./image/cake03.png" alt="チョコレート">
           </div>
